@@ -11,8 +11,24 @@ namespace AliMalfi\MyLibrary;
 *  @author yourname
 */
 class MyLibrary {
-    public function shortenString($string) {
+    public function shortenStringImpl1($string){
+        // Als de lengte van de string kleiner is dan of gelijk is aan 6, retourneer de originele string, anders retourneer
+        // een verkorte versie met het begin, '...', en het einde van de string
+        return strlen($string) <= 6 ? $string : substr($string, 0, 3) . "..." . substr($string, -3);
+    }
 
+    public function shortenStringIml2($string){
+        // Controleer of de lengte van de string kleiner is dan of gelijk is aan 3
+        if(strlen($string) <= 3) {
+            return $string; // Als ja, retourneer de originele string omdat deze al kort genoeg is
+        } else {
+            // Bereken de lengte van het eerste en laatste deel van de string dat behouden moet blijven
+            $firstLength = ceil((strlen($string) - 3) / 2);
+            $lastLength = floor((strlen($string) - 3) / 2);
+
+            // Construeer de verkorte string door het eerste deel, gevolgd door '...', en ten slotte het laatste deel samen te voegen
+            return substr($string, 0, $firstLength) . "..." . substr($string, -$lastLength);
+        }
     }
     public function shortenStringImpl3($string, $preserveLength = 3) {
         // Controleer of de lengte van de string kleiner of gelijk is aan tweemaal de lengte van het te behouden deel
