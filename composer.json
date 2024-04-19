@@ -2,7 +2,7 @@
     "name": "alimalfi/mylibrary",
     "description": "this is my very own php package.",
     "keywords": ["my package", "composer", "package"],
-    "license": "DBAD",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ali Malfi",
