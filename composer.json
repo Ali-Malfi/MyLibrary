@@ -1,6 +1,6 @@
 {
     "name": "alimalfi/mylibrary",
-    "description": "this is my very own php package.",
+    "description": "PHP Package for my internship",
     "keywords": ["my package", "composer", "package"],
     "license": "MIT",
     "authors": [
